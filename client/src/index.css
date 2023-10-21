@@ -4,3 +4,24 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
+
+* {
+    font-family: 'Rubik';
+    user-select: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+.customBtnShadow {
+    box-shadow: 0px 0px 10px 1px #00000045;
+}
+
+.hoverButton {
+    transition: all 0.2s ease-in-out;
+}
+
+.hoverButton:hover {
+    scale: 1.1;
+}

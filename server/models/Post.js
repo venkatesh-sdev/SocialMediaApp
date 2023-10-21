@@ -25,7 +25,7 @@ const PostSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
-    postPicturePath: {
+    picturePath: {
         type: String,
         default: ""
     },
