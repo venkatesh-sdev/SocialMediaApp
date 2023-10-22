@@ -4,10 +4,11 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 const initialState = {
     mode: "light",
-    user: null,
-    token: null,
+    user: JSON.parse(localStorage.getItem('user')) || null,
+    token: JSON.parse(localStorage.getItem('token')) || null,
     posts: [],
 }
+
 
 const authSlice = createSlice({
     name: 'auth',
@@ -19,10 +20,14 @@ const authSlice = createSlice({
         setLogin: (state, action) => {
             state.user = action.payload.user;
             state.token = action.payload.token;
+            localStorage.setItem("user", JSON.stringify(action.payload.user));
+            localStorage.setItem("token", JSON.stringify(action.payload.token));
         },
-        setLogout: (state, action) => {
+        setLogout: (state) => {
             state.user = null;
             state.token = null;
+            localStorage.removeItem("user");
+            localStorage.removeItem("token");
         },
         setPosts: (state, action) => {
             state.posts = action.payload.posts;

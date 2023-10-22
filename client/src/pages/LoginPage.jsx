@@ -29,6 +29,7 @@ const LoginPage = () => {
         formData
       );
       dispatch(setLogin(result.data));
+      console.log(result.data)
       navigate("/profile");
     } catch (error) {
       console.error(error);

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
@@ -7,9 +8,6 @@ import URL from "../constants/URLS";
 
 const ProfilePage = () => {
   const { user, token, posts } = useSelector((state) => state.auth);
-  console.log(user);
-  console.log(token);
-  console.log(posts);
   const dispatch = useDispatch();
 
   useEffect(() => {
