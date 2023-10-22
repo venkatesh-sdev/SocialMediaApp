@@ -30,7 +30,7 @@ const LoginPage = () => {
       );
       dispatch(setLogin(result.data));
       console.log(result.data)
-      navigate("/profile");
+      navigate("/");
     } catch (error) {
       console.error(error);
     }
